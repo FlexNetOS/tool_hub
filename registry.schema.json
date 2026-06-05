@@ -22,7 +22,7 @@
       "properties": {
         "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
         "displayName": { "type": "string" },
-        "category": { "enum": ["lang-runtime", "cli", "formatter", "linter", "build", "vcs", "container", "test", "profiler"] },
+        "category": { "enum": ["lang-runtime", "cli", "formatter", "linter", "build", "vcs", "container", "test", "profiler", "env"] },
         "status": { "enum": ["stable", "beta", "experimental", "deprecated"] },
         "summary": { "type": "string" },
         "tags": { "type": "array", "items": { "type": "string" } },

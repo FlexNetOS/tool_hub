@@ -22,7 +22,7 @@ BESPOKE_REQUIRED = ["category", "runner", "install"]
 ENUMS = {
     "status": {"stable", "beta", "experimental", "deprecated"},
     "category": {"lang-runtime", "cli", "formatter", "linter", "build",
-                 "vcs", "container", "test", "profiler"},
+                 "vcs", "container", "test", "profiler", "env"},
     "runner": {"brew", "cargo", "npm", "pip", "apt", "go", "binary", "script"},
     "hosting": {"peer", "tool_hub-child", "registry-only"},
 }
