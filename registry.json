@@ -1,9 +1,31 @@
 {
   "schema": "./registry.schema.json",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "updated": "2026-06-04",
   "org": "FlexNetOS",
   "hub": "tool_hub",
   "description": "Catalog of CLI and developer tools used across the FlexNetOS meta workspace.",
-  "tools": []
+  "tools": [
+    {
+      "id": "envctl",
+      "displayName": "envctl",
+      "category": "env",
+      "status": "beta",
+      "summary": "GPU-aware, source-building environment manager for the workstation. Each tool is a TOML component with an idempotent install/auto-fix/reset lifecycle, a dependency DAG (graph --impact / --why), a content-hashed lockfile (lock --check), and a read-only doctor.",
+      "tags": ["environment", "rust", "first-party"],
+      "runner": "cargo",
+      "install": "cargo build -p envctl-engine -p envctl",
+      "bin": "envctl",
+      "verifyCmd": "envctl doctor",
+      "homepage": "https://github.com/FlexNetOS/envctl",
+      "license": "MIT OR Apache-2.0",
+      "forked": false,
+      "hosting": "peer",
+      "workspaceMember": "envctl",
+      "repo": "git@github.com:FlexNetOS/envctl.git",
+      "doc": "entries/envctl.md",
+      "snippet": "snippets/envctl.sh",
+      "notes": "Sibling to vault_hub:kasetto — both are declarative environment managers. envctl targets the local workstation/GPU box (builds tools from source); kasetto targets reproducible AI-agent skill environments."
+    }
+  ]
 }

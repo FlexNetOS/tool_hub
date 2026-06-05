@@ -18,11 +18,11 @@ terminal and it isn't an MCP server, it belongs here.*
 
 ## Catalog
 
-_No entries yet — this hub is at v0.1.0 (foundation set, population pending)._
+| Tool | Category | Runner | Status | Doc | Install |
+|------|----------|--------|--------|-----|---------|
+| [envctl](entries/envctl.md) | env | cargo | beta | [entries/envctl.md](entries/envctl.md) | [snippets/envctl.sh](snippets/envctl.sh) |
 
-| Tool | Category | Runner | Status | Doc |
-|------|----------|--------|--------|-----|
-| _(none)_ | | | | |
+`category: env` = environment/toolchain managers (see also `vault_hub:kasetto`, a sibling).
 
 ## Entry shape
 
