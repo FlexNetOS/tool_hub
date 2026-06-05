@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FlexNetOS/tool_hub/registry.schema.json",
+  "title": "tool_hub registry",
+  "description": "Catalog of CLI and developer tools. registry.json is the source of truth; scripts/validate.py enforces it. See template_hub/docs/hub-standard.md.",
+  "type": "object",
+  "required": ["version", "updated", "org", "hub", "tools"],
+  "properties": {
+    "schema": { "type": "string" },
+    "version": { "type": "string" },
+    "updated": { "type": "string" },
+    "org": { "type": "string" },
+    "hub": { "const": "tool_hub" },
+    "description": { "type": "string" },
+    "tools": { "type": "array", "items": { "$ref": "#/$defs/tool" } }
+  },
+  "$defs": {
+    "tool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "displayName", "category", "status", "summary", "runner", "install", "doc"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+        "displayName": { "type": "string" },
+        "category": { "enum": ["lang-runtime", "cli", "formatter", "linter", "build", "vcs", "container", "test", "profiler"] },
+        "status": { "enum": ["stable", "beta", "experimental", "deprecated"] },
+        "summary": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "runner": { "enum": ["brew", "cargo", "npm", "pip", "apt", "go", "binary", "script"], "description": "Primary install channel." },
+        "install": { "type": "string", "description": "Install command, e.g. `cargo install ripgrep`." },
+        "bin": { "type": "string", "description": "Executable name on PATH." },
+        "verifyCmd": { "type": "string", "description": "Command that confirms it works, e.g. `rg --version`." },
+        "homepage": { "type": "string" },
+        "license": { "type": "string", "description": "SPDX id." },
+        "forked": { "type": "boolean" },
+        "hosting": { "enum": ["peer", "tool_hub-child", "registry-only"], "description": "peer = first-party workspace member; tool_hub-child = fork hosted under tool_hub; registry-only = third-party pointer." },
+        "repo": { "type": "string" },
+        "workspaceMember": { "type": "string" },
+        "subPath": { "type": "string" },
+        "pin": { "type": "string" },
+        "upstream": { "type": "string" },
+        "doc": { "type": "string" },
+        "snippet": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}
