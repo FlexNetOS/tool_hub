@@ -1,0 +1,35 @@
+[submodule "repos/cpython"]
+	path = repos/cpython
+	url = https://github.com/python/cpython
+	branch = main
+	shallow = true
+[submodule "repos/actionlint"]
+	path = repos/actionlint
+	url = https://github.com/rhysd/actionlint
+	branch = main
+	shallow = true
+[submodule "repos/gitleaks"]
+	path = repos/gitleaks
+	url = https://github.com/gitleaks/gitleaks
+	branch = master
+	shallow = true
+[submodule "repos/trivy"]
+	path = repos/trivy
+	url = https://github.com/aquasecurity/trivy
+	branch = main
+	shallow = true
+[submodule "repos/node"]
+	path = repos/node
+	url = https://github.com/nodejs/node
+	branch = main
+	shallow = true
+[submodule "repos/bun"]
+	path = repos/bun
+	url = https://github.com/oven-sh/bun
+	branch = main
+	shallow = true
+[submodule "repos/uv"]
+	path = repos/uv
+	url = https://github.com/astral-sh/uv
+	branch = main
+	shallow = true
